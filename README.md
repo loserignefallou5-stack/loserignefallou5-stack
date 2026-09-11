@@ -1,4 +1,4 @@
-# Salut, moi c'est [Ton Prénom / Nom] \uD83D\uDC4B
+# Salut, moi c'est moi SERIGNE FALLOU LO \uD83D\uDC4B
  
 Étudiant en **BUT GEII (Génie Électrique et Informatique Industrielle)** à l'IUT de Bordeaux, passionné par les systèmes embarqués, l'électronique et la programmation.
  
