@@ -1,16 +1,24 @@
-## Hi there 👋
-
-<!--
-**loserignefallou5-stack/loserignefallou5-stack** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+# Salut, moi c'est [Ton Prénom / Nom] \uD83D\uDC4B
+ 
+Étudiant en **BUT GEII (Génie Électrique et Informatique Industrielle)** à l'IUT de Bordeaux, passionné par les systèmes embarqués, l'électronique et la programmation.
+ 
+---
+ 
+### \uD83D\uDEE0️ Compétences & Technologies
+ 
+- **Informatique Industrielle & Embarqué :** C, C++, Arduino / ESP32, Git
+- **Électronique & Simulation :** LTspice, Électronique analogique & numérique, Traitement du signal
+- **Outils & Méthodes :** Linux, Mesures & Instrumentation
+ 
+---
+ 
+### \uD83D\uDE80 Projets à la une
+ 
+- \uD83D\uDE80 **[Nom de ton projet principal]** : Courte description (ex: Système de télémesure pour fusée à eau avec ESP32 et capteur de pression).
+- ⚡ **[Nom d'un autre projet]** : Courte description (ex: Conception d'un filtre actif sous LTspice).
+ 
+---
+ 
+### \uD83D\uDCEB Me contacter
+- **LinkedIn :** [Lien vers ton LinkedIn]
+- **Email :** [Ton email]
