@@ -1,109 +1,207 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Serigne Fallou Lo | Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header class="topbar">
-      <nav class="nav">
-        <a href="#about">À propos</a>
-        <a href="#formation">Formation</a>
-        <a href="#projets">Projets</a>
-        <a href="#experience">Expérience</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Serigne Fallou LO | BUT GEII ESE</title>
+    <style>
+        :root {
+            --primary: #0056b3;
+            --secondary: #002b5c;
+            --bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text: #333333;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--secondary);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        nav {
+            background: var(--primary);
+            padding: 0.8rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        section {
+            background: var(--card-bg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+        }
+        .skills-grid, .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .card {
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 1.2rem;
+            background: #fafafa;
+        }
+        .card h3 {
+            margin-top: 0;
+            color: var(--secondary);
+        }
+        .badge {
+            display: inline-block;
+            background: #e1f0ff;
+            color: var(--primary);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--secondary);
+            color: white;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Serigne Fallou LO</h1>
+        <p>Étudiant en BUT2 GEII - Électronique & Systèmes Embarqués (ESE) | IUT de Bordeaux</p>
     </header>
 
-    <main class="container">
-      <section id="about" class="hero">
-        <div class="photo">S</div>
-        <div class="hero-text">
-          <p class="subtitle">Alternance (3 ans) – Électronique & Systèmes embarqués</p>
-          <h1>Serigne Fallou Lo</h1>
-          <p class="intro">
-            Étudiant en BUT GEII (Génie Électrique et Informatique Industrielle)
-            à l’IUT de Bordeaux, passionné par les systèmes embarqués,
-            l’électronique et la programmation.
-          </p>
-        </div>
-      </section>
+    <nav>
+        <a href="#about">À propos</a>
+        <a href="#competences">Compétences</a>
+        <a href="#projets">Projets</a>
+        <a href="#interets">Centres d'intérêt</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-      <section id="formation" class="block">
-        <h2>Formation</h2>
-        <ul>
-          <li><strong>BUT2 GEII – Parcours ESE</strong> – Dès Septembre 2026 – IUT de Bordeaux</li>
-          <li><strong>Licence 1 MATH – PHYS – INFO (MPI)</strong> – 2024 – 2025 – UASZ (Sénégal)</li>
-          <li><strong>1ère Année Cycle Ingénieur</strong> – 2025 – 2026 – ESIEA Laval</li>
-          <li><strong>Baccalauréat S2</strong> – 2023 – 2024 – EPPG (Sénégal)</li>
-        </ul>
-      </section>
+    <div class="container">
 
-      <section id="projets" class="block">
-        <h2>Projets techniques & académiques</h2>
+        <!-- À PROPOS -->
+        <section id="about">
+            <h2>À propos de moi</h2>
+            <p>
+                Bienvenue sur mon portfolio ! Après une première année de prépa intégrée à l'ESIEA Laval, j'ai rejoint la 2ème année de <strong>BUT GEII (Génie Électrique et Informatique Industrielle)</strong> à l'IUT de Bordeaux, spécialité <strong>Électronique et Systèmes Embarqués (ESE)</strong>.
+            </p>
+            <p>
+                Passionné par le développement sur microcontrôleurs, la conception de cartes et le traitement de signal, je prépare activement mes candidatures pour un stage technicien de 10 semaines dès avril 2027 ainsi que ma poursuite d'études en école d'ingénieurs.
+            </p>
+        </section>
 
-        <div class="project">
-          <h3>Projet fusée à eau électronique</h3>
-          <ul>
-            <li>Conception d’un système embarqué d’acquisition de données en temps réel (Microcontrôleur ESP32).</li>
-            <li>Intégration et programmation en langage C d’un capteur de pression/altitude (Adafruit BMP3XX) sur carte SD.</li>
-            <li>Gestion de l’activation automatique d’un servomoteur pour le déploiement du parachute.</li>
-          </ul>
-        </div>
+        <!-- VITRINE DES COMPÉTENCES (APC GEII) -->
+        <section id="competences">
+            <h2>Vitrine des Compétences (Référentiel GEII)</h2>
+            <div class="skills-grid">
+                <div class="card">
+                    <h3>⚡ C1 - CONCEVOIR</h3>
+                    <p>Analyse fonctionnelle, proposition de solutions techniques, dimensionnement de composants et modélisation de systèmes embarqués.</p>
+                </div>
+                <div class="card">
+                    <h3>🔍 C2 - VÉRIFIER</h3>
+                    <p>Élaboration et exécution de procédures d'essais, mesures physiques, analyse de signaux à l'oscilloscope et correction des dysfonctionnements.</p>
+                </div>
+                <div class="card">
+                    <h3>🛠️ C3 - MAINTENIR</h3>
+                    <p>Diagnostic de pannes matérielles/logicielles, application et rédaction de procédures de maintenance préventive et corrective.</p>
+                </div>
+                <div class="card">
+                    <h3>💻 C4 - IMPLANTER (Parcours ESE)</h3>
+                    <p>Programmation en C/C++ sur microcontrôleurs (ESP32, STM32, Arduino), routage de cartes électroniques, gestion des bus de communication (I2C, SPI, UART).</p>
+                </div>
+                <div class="card">
+                    <h3>📋 MANAGER</h3>
+                    <p>Gestion de projet, rédaction de documentations techniques, travail en équipe, rigueur industrielle et communication.</p>
+                </div>
+            </div>
+        </section>
 
-        <div class="project">
-          <h3>Projet robot mobile "ESEIABOT"</h3>
-          <ul>
-            <li>Développement, câblage et programmation en C d’un robot mobile autonome.</li>
-            <li>Implémentation d’algorithmes de contrôle-commande et traitement des signaux capteurs pour la navigation.</li>
-          </ul>
-        </div>
-      </section>
+        <!-- VITRINE DES PROJETS -->
+        <section id="projets">
+            <h2>Vitrine des Projets & Réalisations</h2>
+            <div class="projects-grid">
+                <div class="card">
+                    <h3>🚀 Fusée à eau & Télémesure Embarquée</h3>
+                    <span class="badge">Projet Fil Rouge</span> <span class="badge">ESP32 / C++</span>
+                    <p><strong>Description :</strong> Conception d'un système embarqué d'acquisition de données en temps réel.</p>
+                    <ul>
+                        <li>Programmation C/C++ sur ESP32.</li>
+                        <li>Intégration d'un capteur de pression/altitude (BMP390) via bus I2C.</li>
+                        <li>Enregistrement des données sur carte SD (SPI) au format CSV.</li>
+                        <li>Déclenchement automatique d'un servomoteur pour le parachute à l'apogée.</li>
+                    </ul>
+                </div>
 
-      <section id="experience" class="block">
-        <h2>Expériences professionnelles</h2>
+                <div class="card">
+                    <h3>🤖 Robot Mobile Autonome "Esieabot"</h3>
+                    <span class="badge">Câblage & C</span> <span class="badge">Contrôle-Commande</span>
+                    <p><strong>Description :</strong> Développement, câblage et programmation d'un robot mobile autonome.</p>
+                    <ul>
+                        <li>Implémentation d'algorithmes de navigation et d'évitement d'obstacles.</li>
+                        <li>Traitement des signaux capteurs en temps réel.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-        <div class="job">
-          <h3>Agent de production (CDD) – SNV LAVAL</h3>
-          <p>Juin 2026 – Août 2026</p>
-          <ul>
-            <li>Respect strict des cadences industrielles et normes de sécurité.</li>
-            <li>Contrôle qualité en rythme 2x8.</li>
-          </ul>
-        </div>
+        <!-- CENTRES D'INTÉRÊT -->
+        <section id="interets">
+            <h2>Centres d'intérêt & Engagement</h2>
+            <ul>
+                <li><strong>Musculation & Fitness :</strong> Pratique régulière (discipline, rigueur et dépassement de soi).</li>
+                <li><strong>Électronique DIY & Nouvelles Technologies :</strong> Veille technologique, projets personnels embarqués, microcontrôleurs.</li>
+            </ul>
+        </section>
 
-        <div class="job">
-          <h3>Mission d’intérim diverses (Laval)</h3>
-          <p>2025 – 2026</p>
-          <ul>
-            <li>Agent d’accueil (Basic-Fit) : gestion du club en autonomie.</li>
-            <li>Vendeur / ELS (Primark & Action) : travail en équipe et tenue des objectifs.</li>
-            <li>Inventoriste : contrôle précis et rigueur absolue.</li>
-          </ul>
-        </div>
-      </section>
+        <!-- CONTACT -->
+        <section id="contact">
+            <h2>Me Contacter</h2>
+            <p>N'hésitez pas à me contacter pour toute opportunité de stage ou d'échange professionnel :</p>
+            <p>📧 <strong>Email :</strong> loserignefallou5@gmail.com</p>
+            <p>📍 <strong>Localisation :</strong> Bordeaux / Gradignan, France</p>
+            <p>🔗 <strong>LinkedIn :</strong> <a href="#" target="_blank">Mon profil LinkedIn</a></p>
+            <p>💻 <strong>GitHub :</strong> <a href="#" target="_blank">Mon profil GitHub</a></p>
+        </section>
 
-      <section class="block">
-        <h2>Compétences & Technologies</h2>
-        <ul>
-          <li>Informatique Industrielle & Embarqué : C, C++, Arduino, ESP32, Git</li>
-          <li>Électronique & Simulation : LTspice, Électronique analogique & numérique, Traitement du signal</li>
-          <li>Outils & Méthodes : Linux, Mesures & Instrumentation</li>
-        </ul>
-      </section>
+    </div>
 
-      <section id="contact" class="block">
-        <h2>Me contacter</h2>
-        <ul>
-          <li>LinkedIn : <a href="#">Lien vers ton LinkedIn</a></li>
-          <li>Email : <a href="mailto:loserignefallou5@gmail.com">loserignefallou5@gmail.com</a></li>
-          <li>Téléphone : +33 6 41 80 52 52</li>
-        </ul>
-      </section>
-    </main>
+    <footer>
+        <p>© 2026 Serigne Fallou LO - Portfolio BUT GEII IUT de Bordeaux</p>
+    </footer>
 
-    <script src="script.js"></script>
-  </body>
+</body>
 </html>
