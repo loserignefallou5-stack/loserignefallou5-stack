@@ -11,6 +11,7 @@
             --bg: #f8f9fa;
             --card-bg: #ffffff;
             --text: #333333;
+            --accent: #28a745;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -23,8 +24,17 @@
         header {
             background-color: var(--secondary);
             color: white;
-            padding: 2rem 1rem;
+            padding: 2.5rem 1rem;
             text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+        header p {
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
         nav {
             background: var(--primary);
@@ -33,12 +43,14 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
+            margin: 0 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
         }
         nav a:hover {
             text-decoration: underline;
@@ -59,22 +71,29 @@
             color: var(--primary);
             border-bottom: 2px solid var(--primary);
             padding-bottom: 0.5rem;
+            margin-top: 0;
         }
         .skills-grid, .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
         .card {
             border: 1px solid #e2e8f0;
-            border-radius: 6px;
-            padding: 1.2rem;
+            border-radius: 8px;
+            padding: 1.5rem;
             background: #fafafa;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
         }
         .card h3 {
             margin-top: 0;
             color: var(--secondary);
+            font-size: 1.2rem;
         }
         .badge {
             display: inline-block;
@@ -82,9 +101,28 @@
             color: var(--primary);
             padding: 0.2rem 0.6rem;
             border-radius: 4px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: bold;
             margin-right: 5px;
+            margin-bottom: 8px;
+        }
+        .badge-proof {
+            background: #e6f4ea;
+            color: var(--accent);
+        }
+        .btn-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 12px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+        .btn-link:hover {
+            background: var(--secondary);
         }
         footer {
             text-align: center;
@@ -105,7 +143,7 @@
     <nav>
         <a href="#about">À propos</a>
         <a href="#competences">Compétences</a>
-        <a href="#projets">Projets</a>
+        <a href="#projets">Projets & Réalisations</a>
         <a href="#interets">Centres d'intérêt</a>
         <a href="#contact">Contact</a>
     </nav>
@@ -116,7 +154,7 @@
         <section id="about">
             <h2>À propos de moi</h2>
             <p>
-                Bienvenue sur mon portfolio ! Après une première année de prépa intégrée à l'ESIEA Laval, j'ai rejoint la 2ème année de <strong>BUT GEII (Génie Électrique et Informatique Industrielle)</strong> à l'IUT de Bordeaux, spécialité <strong>Électronique et Systèmes Embarqués (ESE)</strong>.
+                Bienvenue sur mon portfolio ! Après une première année de prépa intégrée à l'ESIEA Laval, j'ai rejoint la 2ème année de <strong>BUT GEII (Génie Électrique et Informatique Industrielle)</strong> à l'IUT de Bordeaux, dans le parcours <strong>Électronique et Systèmes Embarqués (ESE)</strong>.
             </p>
             <p>
                 Passionné par le développement sur microcontrôleurs, la conception de cartes et le traitement de signal, je prépare activement mes candidatures pour un stage technicien de 10 semaines dès avril 2027 ainsi que ma poursuite d'études en école d'ingénieurs.
@@ -126,26 +164,37 @@
         <!-- VITRINE DES COMPÉTENCES (APC GEII) -->
         <section id="competences">
             <h2>Vitrine des Compétences (Référentiel GEII)</h2>
+            <p>Mon parcours s’articule autour des blocs de compétences majeurs du BUT GEII :</p>
+            
             <div class="skills-grid">
                 <div class="card">
                     <h3>⚡ C1 - CONCEVOIR</h3>
                     <p>Analyse fonctionnelle, proposition de solutions techniques, dimensionnement de composants et modélisation de systèmes embarqués.</p>
+                    <span class="badge badge-proof">Preuve : Système Fusée à eau ESP32</span>
                 </div>
+
                 <div class="card">
                     <h3>🔍 C2 - VÉRIFIER</h3>
                     <p>Élaboration et exécution de procédures d'essais, mesures physiques, analyse de signaux à l'oscilloscope et correction des dysfonctionnements.</p>
+                    <span class="badge badge-proof">Preuve : Tests capteurs I2C/SPI & Relevés de télémesure</span>
                 </div>
+
                 <div class="card">
                     <h3>🛠️ C3 - MAINTENIR</h3>
                     <p>Diagnostic de pannes matérielles/logicielles, application et rédaction de procédures de maintenance préventive et corrective.</p>
+                    <span class="badge badge-proof">Preuve : Débogage hardware/software Esieabot</span>
                 </div>
+
                 <div class="card">
                     <h3>💻 C4 - IMPLANTER (Parcours ESE)</h3>
-                    <p>Programmation en C/C++ sur microcontrôleurs (ESP32, STM32, Arduino), routage de cartes électroniques, gestion des bus de communication (I2C, SPI, UART).</p>
+                    <p>Programmation C/C++ sur microcontrôleurs (ESP32, STM32, Arduino), routage de cartes électroniques, gestion des bus de communication (I2C, SPI, UART).</p>
+                    <span class="badge badge-proof">Preuve : Code embarqué ESP32 / Carte SD</span>
                 </div>
+
                 <div class="card">
                     <h3>📋 MANAGER</h3>
-                    <p>Gestion de projet, rédaction de documentations techniques, travail en équipe, rigueur industrielle et communication.</p>
+                    <p>Gestion de projet en équipe, rédaction de rapports professionnels, gestion des délais, rigueur industrielle et communication technique.</p>
+                    <span class="badge badge-proof">Preuve : Cahier des charges & Dossiers techniques</span>
                 </div>
             </div>
         </section>
@@ -154,27 +203,29 @@
         <section id="projets">
             <h2>Vitrine des Projets & Réalisations</h2>
             <div class="projects-grid">
+
                 <div class="card">
                     <h3>🚀 Fusée à eau & Télémesure Embarquée</h3>
                     <span class="badge">Projet Fil Rouge</span> <span class="badge">ESP32 / C++</span>
-                    <p><strong>Description :</strong> Conception d'un système embarqué d'acquisition de données en temps réel.</p>
+                    <p><strong>Description :</strong> Système embarqué temps réel d'acquisition de données d'altitude et de sécurité.</p>
                     <ul>
-                        <li>Programmation C/C++ sur ESP32.</li>
-                        <li>Intégration d'un capteur de pression/altitude (BMP390) via bus I2C.</li>
-                        <li>Enregistrement des données sur carte SD (SPI) au format CSV.</li>
-                        <li>Déclenchement automatique d'un servomoteur pour le parachute à l'apogée.</li>
+                        <li>Programmation C/C++ sur microcontrôleur ESP32.</li>
+                        <li>Capteur de pression BMP390 (I2C) & enregistrement carte microSD (SPI) en CSV.</li>
+                        <li>Détection d'apogée et commande de servomoteur pour déploiement du parachute.</li>
                     </ul>
+                    <a href="https://github.com/loserignefallou5/fusee-eau-telemesure-esp32" target="_blank" class="btn-link">Voir le dépôt GitHub</a>
                 </div>
 
                 <div class="card">
                     <h3>🤖 Robot Mobile Autonome "Esieabot"</h3>
-                    <span class="badge">Câblage & C</span> <span class="badge">Contrôle-Commande</span>
+                    <span class="badge">Projet Académique</span> <span class="badge">Câblage & C</span>
                     <p><strong>Description :</strong> Développement, câblage et programmation d'un robot mobile autonome.</p>
                     <ul>
-                        <li>Implémentation d'algorithmes de navigation et d'évitement d'obstacles.</li>
+                        <li>Algorithmes d'évitement d'obstacles et gestion des moteurs.</li>
                         <li>Traitement des signaux capteurs en temps réel.</li>
                     </ul>
                 </div>
+
             </div>
         </section>
 
@@ -193,8 +244,8 @@
             <p>N'hésitez pas à me contacter pour toute opportunité de stage ou d'échange professionnel :</p>
             <p>📧 <strong>Email :</strong> loserignefallou5@gmail.com</p>
             <p>📍 <strong>Localisation :</strong> Bordeaux / Gradignan, France</p>
-            <p>🔗 <strong>LinkedIn :</strong> <a href="#" target="_blank">Mon profil LinkedIn</a></p>
-            <p>💻 <strong>GitHub :</strong> <a href="#" target="_blank">Mon profil GitHub</a></p>
+            <p>🔗 <strong>LinkedIn :</strong> <a href="https://www.linkedin.com" target="_blank">Mon profil LinkedIn</a></p>
+            <p>💻 <strong>GitHub :</strong> <a href="https://github.com/loserignefallou5" target="_blank">Mon profil GitHub</a></p>
         </section>
 
     </div>
