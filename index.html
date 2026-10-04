@@ -6,253 +6,348 @@
     <title>Portfolio - Serigne Fallou LO | BUT GEII ESE</title>
     <style>
         :root {
-            --primary: #0056b3;
-            --secondary: #002b5c;
-            --bg: #f8f9fa;
+            --sidebar-bg: #1e293b;
+            --sidebar-text: #f8fafc;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg: #f1f5f9;
             --card-bg: #ffffff;
-            --text: #333333;
-            --accent: #28a745;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-green: #dcfce7;
+            --badge-green-text: #166534;
         }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             background-color: var(--bg);
-            color: var(--text);
+            color: var(--text-main);
+            display: flex;
+            min-height: 100vh;
             line-height: 1.6;
         }
-        header {
-            background-color: var(--secondary);
-            color: white;
-            padding: 2.5rem 1rem;
+
+        /* --- SIDEBAR BARRE LATÉRALE --- */
+        .sidebar {
+            width: 280px;
+            background-color: var(--sidebar-bg);
+            color: var(--sidebar-text);
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .profile-container {
             text-align: center;
+            margin-bottom: 2rem;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.2rem;
-        }
-        header p {
-            margin-top: 0.5rem;
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        nav {
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
             background: var(--primary);
-            padding: 0.8rem;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        nav a {
             color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+            border: 3px solid #38bdf8;
+        }
+
+        .profile-container h1 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .profile-container p {
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
             text-decoration: none;
-            margin: 0 12px;
-            font-weight: 600;
-            font-size: 0.95rem;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.2s ease;
         }
-        nav a:hover {
-            text-decoration: underline;
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
         }
-        .container {
-            max-width: 1100px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+
+        .sidebar-footer {
+            margin-top: auto;
+            padding-top: 2rem;
+            font-size: 0.75rem;
+            color: #64748b;
+            text-align: center;
         }
-        section {
+
+        /* --- CONTENU PRINCIPAL --- */
+        .main-content {
+            margin-left: 280px;
+            flex: 1;
+            padding: 2.5rem;
+            max-width: 1200px;
+        }
+
+        .section {
             background: var(--card-bg);
             padding: 2rem;
+            border-radius: 12px;
             margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
-        h2 {
-            color: var(--primary);
-            border-bottom: 2px solid var(--primary);
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
             padding-bottom: 0.5rem;
-            margin-top: 0;
+            border-bottom: 2px solid var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        .skills-grid, .projects-grid {
+
+        /* GRILLES & CARTES */
+        .grid-2 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 1.5rem;
-            margin-top: 1.5rem;
         }
+
         .card {
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 10px;
             padding: 1.5rem;
-            background: #fafafa;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
+
         .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
         }
+
         .card h3 {
-            margin-top: 0;
-            color: var(--secondary);
-            font-size: 1.2rem;
-        }
-        .badge {
-            display: inline-block;
-            background: #e1f0ff;
+            font-size: 1.15rem;
             color: var(--primary);
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-right: 5px;
-            margin-bottom: 8px;
+            margin-bottom: 0.5rem;
         }
+
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin: 0.75rem 0;
+        }
+
+        .badge {
+            background: #e0e7ff;
+            color: #3730a3;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+        }
+
         .badge-proof {
-            background: #e6f4ea;
-            color: var(--accent);
+            background: var(--badge-green);
+            color: var(--badge-green-text);
         }
-        .btn-link {
+
+        .btn {
             display: inline-block;
-            margin-top: 10px;
-            padding: 6px 12px;
-            background: var(--primary);
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary);
             color: white;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 6px;
             font-size: 0.85rem;
-            font-weight: bold;
+            font-weight: 600;
+            transition: background 0.2s;
         }
-        .btn-link:hover {
-            background: var(--secondary);
+
+        .btn:hover {
+            background-color: var(--primary-hover);
         }
-        footer {
-            text-align: center;
-            padding: 1.5rem;
-            background: var(--secondary);
-            color: white;
-            margin-top: 2rem;
+
+        /* ADAPTATION MOBILE */
+        @media (max-width: 868px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Serigne Fallou LO</h1>
-        <p>Étudiant en BUT2 GEII - Électronique & Systèmes Embarqués (ESE) | IUT de Bordeaux</p>
-    </header>
+    <!-- SIDEBAR STYLE ERWAN PAQUELET -->
+    <aside class="sidebar">
+        <div class="profile-container">
+            <div class="avatar">SL</div>
+            <h1>Serigne Fallou LO</h1>
+            <p>BUT GEII ESE - IUT de Bordeaux</p>
+        </div>
 
-    <nav>
-        <a href="#about">À propos</a>
-        <a href="#competences">Compétences</a>
-        <a href="#projets">Projets & Réalisations</a>
-        <a href="#interets">Centres d'intérêt</a>
-        <a href="#contact">Contact</a>
-    </nav>
+        <ul class="nav-links">
+            <li><a href="#about">👤 À propos de moi</a></li>
+            <li><a href="#competences">🎯 Vitrine des compétences</a></li>
+            <li><a href="#projets">🚀 Vitrine des projets</a></li>
+            <li><a href="#interets">⚽ Centres d'intérêt</a></li>
+            <li><a href="#contact">📫 Contact</a></li>
+        </ul>
 
-    <div class="container">
+        <div class="sidebar-footer">
+            <p>© 2026 Serigne Fallou LO</p>
+        </div>
+    </aside>
 
-        <!-- À PROPOS -->
-        <section id="about">
-            <h2>À propos de moi</h2>
+    <!-- CONTENU PRINCIPAL -->
+    <main class="main-content">
+
+        <!-- À PROPOS DE MOI -->
+        <section id="about" class="section">
+            <h2 class="section-title">👤 À propos de moi</h2>
             <p>
-                Bienvenue sur mon portfolio ! Après une première année de prépa intégrée à l'ESIEA Laval, j'ai rejoint la 2ème année de <strong>BUT GEII (Génie Électrique et Informatique Industrielle)</strong> à l'IUT de Bordeaux, dans le parcours <strong>Électronique et Systèmes Embarqués (ESE)</strong>.
+                Bienvenue sur mon portfolio ! Après une première année de prépa intégrée à l'ESIEA Laval, j'ai rejoint la 2ème année de <strong>BUT GEII (Génie Électrique et Informatique Industrielle)</strong> à l'IUT de Bordeaux, parcours <strong>Électronique et Systèmes Embarqués (ESE)</strong>.
             </p>
+            <br>
             <p>
-                Passionné par le développement sur microcontrôleurs, la conception de cartes et le traitement de signal, je prépare activement mes candidatures pour un stage technicien de 10 semaines dès avril 2027 ainsi que ma poursuite d'études en école d'ingénieurs.
+                Passionné par le développement embarqué, la microélectronique et le traitement du signal, je recherche activement un stage technicien de 10 semaines à partir d'avril 2027 ainsi qu'une opportunité en école d'ingénieurs.
             </p>
         </section>
 
-        <!-- VITRINE DES COMPÉTENCES (APC GEII) -->
-        <section id="competences">
-            <h2>Vitrine des Compétences (Référentiel GEII)</h2>
-            <p>Mon parcours s’articule autour des blocs de compétences majeurs du BUT GEII :</p>
-            
-            <div class="skills-grid">
+        <!-- VITRINE DES COMPÉTENCES -->
+        <section id="competences" class="section">
+            <h2 class="section-title">🎯 Vitrine des Compétences (APC GEII)</h2>
+            <div class="grid-2">
                 <div class="card">
                     <h3>⚡ C1 - CONCEVOIR</h3>
-                    <p>Analyse fonctionnelle, proposition de solutions techniques, dimensionnement de composants et modélisation de systèmes embarqués.</p>
-                    <span class="badge badge-proof">Preuve : Système Fusée à eau ESP32</span>
+                    <p>Analyse fonctionnelle, dimensionnement de composants, modélisation de systèmes et choix d'architectures matériel/logiciel.</p>
+                    <div class="badge-container">
+                        <span class="badge badge-proof">Preuve : Télémesure ESP32</span>
+                    </div>
                 </div>
 
                 <div class="card">
                     <h3>🔍 C2 - VÉRIFIER</h3>
-                    <p>Élaboration et exécution de procédures d'essais, mesures physiques, analyse de signaux à l'oscilloscope et correction des dysfonctionnements.</p>
-                    <span class="badge badge-proof">Preuve : Tests capteurs I2C/SPI & Relevés de télémesure</span>
+                    <p>Procédures d'essais, mesures à l'oscilloscope, qualification de signaux I2C/SPI et résolution de dysfonctionnements.</p>
+                    <div class="badge-container">
+                        <span class="badge badge-proof">Preuve : Acquisition capteur BMP390</span>
+                    </div>
                 </div>
 
                 <div class="card">
                     <h3>🛠️ C3 - MAINTENIR</h3>
-                    <p>Diagnostic de pannes matérielles/logicielles, application et rédaction de procédures de maintenance préventive et corrective.</p>
-                    <span class="badge badge-proof">Preuve : Débogage hardware/software Esieabot</span>
+                    <p>Diagnostic de pannes matérielles et logicielles, suivi de procédures de maintenance corrective et préventive.</p>
+                    <div class="badge-container">
+                        <span class="badge badge-proof">Preuve : Débogage Esieabot</span>
+                    </div>
                 </div>
 
                 <div class="card">
                     <h3>💻 C4 - IMPLANTER (Parcours ESE)</h3>
-                    <p>Programmation C/C++ sur microcontrôleurs (ESP32, STM32, Arduino), routage de cartes électroniques, gestion des bus de communication (I2C, SPI, UART).</p>
-                    <span class="badge badge-proof">Preuve : Code embarqué ESP32 / Carte SD</span>
-                </div>
-
-                <div class="card">
-                    <h3>📋 MANAGER</h3>
-                    <p>Gestion de projet en équipe, rédaction de rapports professionnels, gestion des délais, rigueur industrielle et communication technique.</p>
-                    <span class="badge badge-proof">Preuve : Cahier des charges & Dossiers techniques</span>
+                    <p>Programmation C/C++ embarqué, routage de cartes électroniques, gestion des bus de communication (I2C, SPI, UART).</p>
+                    <div class="badge-container">
+                        <span class="badge badge-proof">Preuve : Code C++ & Enregistrement SD</span>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- VITRINE DES PROJETS -->
-        <section id="projets">
-            <h2>Vitrine des Projets & Réalisations</h2>
-            <div class="projects-grid">
-
+        <section id="projets" class="section">
+            <h2 class="section-title">🚀 Vitrine des Projets</h2>
+            <div class="grid-2">
                 <div class="card">
                     <h3>🚀 Fusée à eau & Télémesure Embarquée</h3>
-                    <span class="badge">Projet Fil Rouge</span> <span class="badge">ESP32 / C++</span>
-                    <p><strong>Description :</strong> Système embarqué temps réel d'acquisition de données d'altitude et de sécurité.</p>
-                    <ul>
-                        <li>Programmation C/C++ sur microcontrôleur ESP32.</li>
-                        <li>Capteur de pression BMP390 (I2C) & enregistrement carte microSD (SPI) en CSV.</li>
-                        <li>Détection d'apogée et commande de servomoteur pour déploiement du parachute.</li>
+                    <div class="badge-container">
+                        <span class="badge">Projet Fil Rouge</span>
+                        <span class="badge">ESP32 / C++</span>
+                    </div>
+                    <p>Système embarqué temps réel d'acquisition d'altitude et de sécurité.</p>
+                    <ul style="margin-left: 1.2rem; margin-top: 0.5rem; font-size: 0.9rem;">
+                        <li>Acquisition de pression BMP390 (I2C).</li>
+                        <li>Enregistrement sur carte microSD (SPI).</li>
+                        <li>Servomoteur pour ouverture du parachute.</li>
                     </ul>
-                    <a href="https://github.com/loserignefallou5/fusee-eau-telemesure-esp32" target="_blank" class="btn-link">Voir le dépôt GitHub</a>
+                    <a href="https://github.com/loserignefallou5/fusee-eau-telemesure-esp32" target="_blank" class="btn">Voir sur GitHub</a>
                 </div>
 
                 <div class="card">
                     <h3>🤖 Robot Mobile Autonome "Esieabot"</h3>
-                    <span class="badge">Projet Académique</span> <span class="badge">Câblage & C</span>
-                    <p><strong>Description :</strong> Développement, câblage et programmation d'un robot mobile autonome.</p>
-                    <ul>
-                        <li>Algorithmes d'évitement d'obstacles et gestion des moteurs.</li>
-                        <li>Traitement des signaux capteurs en temps réel.</li>
+                    <div class="badge-container">
+                        <span class="badge">Projet Académique</span>
+                        <span class="badge">C / Câblage</span>
+                    </div>
+                    <p>Développement, assemblage et programmation d'un robot mobile autonome.</p>
+                    <ul style="margin-left: 1.2rem; margin-top: 0.5rem; font-size: 0.9rem;">
+                        <li>Algorithmes d'évitement d'obstacles.</li>
+                        <li>Traitement de signaux capteurs en temps réel.</li>
                     </ul>
                 </div>
-
             </div>
         </section>
 
         <!-- CENTRES D'INTÉRÊT -->
-        <section id="interets">
-            <h2>Centres d'intérêt & Engagement</h2>
-            <ul>
+        <section id="interets" class="section">
+            <h2 class="section-title">⚽ Centres d'intérêt</h2>
+            <ul style="margin-left: 1.2rem;">
                 <li><strong>Musculation & Fitness :</strong> Pratique régulière (discipline, rigueur et dépassement de soi).</li>
-                <li><strong>Électronique DIY & Nouvelles Technologies :</strong> Veille technologique, projets personnels embarqués, microcontrôleurs.</li>
+                <li><strong>Électronique DIY :</strong> Veille technologique, programmation sur microcontrôleurs, projets personnels embarqués.</li>
             </ul>
         </section>
 
         <!-- CONTACT -->
-        <section id="contact">
-            <h2>Me Contacter</h2>
-            <p>N'hésitez pas à me contacter pour toute opportunité de stage ou d'échange professionnel :</p>
+        <section id="contact" class="section">
+            <h2 class="section-title">📫 Contact</h2>
             <p>📧 <strong>Email :</strong> loserignefallou5@gmail.com</p>
             <p>📍 <strong>Localisation :</strong> Bordeaux / Gradignan, France</p>
-            <p>🔗 <strong>LinkedIn :</strong> <a href="https://www.linkedin.com" target="_blank">Mon profil LinkedIn</a></p>
-            <p>💻 <strong>GitHub :</strong> <a href="https://github.com/loserignefallou5" target="_blank">Mon profil GitHub</a></p>
+            <p>🔗 <strong>GitHub :</strong> <a href="https://github.com/loserignefallou5" target="_blank">github.com/loserignefallou5</a></p>
         </section>
 
-    </div>
-
-    <footer>
-        <p>© 2026 Serigne Fallou LO - Portfolio BUT GEII IUT de Bordeaux</p>
-    </footer>
+    </main>
 
 </body>
 </html>
